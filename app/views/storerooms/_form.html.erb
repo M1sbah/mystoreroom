@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="mx-auto col-10 col-md-8 col-lg-6">
+  	<%= form_with(model: storeroom) do |form|%>
+      <h1>StoreRoom</h1>
+      	<div class="bg-dark col-lg-8 form-control">
+      		<div class="row col-lg-12 bg-dark">
+				<%=form.label :username, class:"form-control mb-3 bg-dark text-white border-0" %>
+				<%= form.text_field :username ,class:"form-control mb-2" %>
+			</div>
+		    <div class="row col-lg-12 bg-dark">
+				<%=form.label :email, class:"form-control mb-3 bg-dark text-white border-0" %>
+				<%= form.email_field :email ,class:"form-control text-color-white" %>
+			</div>
+			<div class="row col-lg-12 bg-dark mt-2">
+				<%=form.label :Attachment, class:"form-control mb-3 bg-dark text-white border-0" %>
+				<%= form.file_field :image ,class:"form-control text-color-white" %>
+			</div>
+			<br><br>
+
+      	</div>
+	
+		<%= form.submit class:"btn btn-primary mt-5"%>
+		<%= link_to "Back" , storerooms_path ,class:"btn btn-dark mt-5" %>
+	<%end%>
+  </div>
+</div>

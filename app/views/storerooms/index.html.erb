@@ -1,0 +1,21 @@
+<div class="d-flex flex-wrap flex-row mx-5 px-5">
+	<% @storerooms.each do |data| %>
+		<div class="card mt-5 mx-3" style="width: 23rem; ">
+			  <div class="card-body">
+			    <h5 class="card-title"><%= data.username%></h5>
+				    <div class="card-subtitle mb-2 text-muted">
+				    	<p><%= data.email%></p>
+				    	<%= image_tag data.image ,class:"card-img-top mb-2" %>
+				    	<%= link_to "show" , data ,class:"btn btn-secondary"%>
+				    	<%= link_to "edit" , edit_storeroom_path(data) ,class:"btn btn-dark"%>
+				    </div>
+				    	<%= button_to "Delete" , data ,class:"btn btn-danger" , method: :delete, data: {confirm: 'Are you sure?'}%>
+				    	<%= link_to data.status , toggle_status_storeroom_path(data) %>
+
+			  </div>
+			</div>
+		<div class="px-3">
+		</div>
+	<% end %>
+	</div>
+<%= link_to "new item", new_storeroom_path ,class:"btn btn-primary mx-5 mt-5"%>

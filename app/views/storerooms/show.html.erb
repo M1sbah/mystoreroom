@@ -1,0 +1,10 @@
+<div class="card mx-auto col-10 col-md-8 col-lg-6 mt-5" style="width: 18rem;">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <%= image_tag @storeroom.image ,class:"card-img-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @storeroom.username %></h5>
+    <p class="card-text"><%= @storeroom.email %></p>
+    <%= link_to "Destroy this storeroom", @storeroom,class:"btn btn-danger", method: :delete ,data: {confirm: "Are You Sure?"}%>
+    <%= link_to "Back" , storerooms_path ,class:"btn btn-primary" %>
+  </div>
+</div>
